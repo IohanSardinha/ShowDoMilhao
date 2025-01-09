@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backdoor</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="backdoor.css">
+</head>
+<body>
+  <h1>Gerenciar Perguntas</h1>
+  <div id="add-question-container">
+    <h2>Adicionar nova pergunta</h2>
+    <form id="add-question-form">
+      <label for="question-name">Pergunta:</label>
+      <input type="text" id="question-name" required>
+      <label for="question-value">Valor:</label>
+      <input type="number" id="question-value" required>
+      <button type="submit">Adicionar</button>
+    </form>
+  </div>
+  <hr>
+  <div id="update-answer-container">
+    <h2>Atualizar resposta da ultima pergunta</h2>
+    <form id="update-answer-form">
+      <label for="question-answer">Resposta:</label>
+      <input type="text" id="question-answer" required>
+      <button type="submit">Atualizar</button>
+    </form>
+  </div>
+  <hr>
+  <form>
+    <button class="results" id="results">Ver Resultados</button>
+  </form>
+  <hr>
+  <form>
+    <button class="restart" id="restart">Recomeçar Jogo</button>
+  </form>
+  
+  <div id="message"></div>
+
+  <script src="backdoor.js"></script>
+</body>
+</html>

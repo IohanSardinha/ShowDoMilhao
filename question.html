@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question</title>
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="question.js"></script>
+  <link rel="stylesheet" href="questions.css">
+</head>
+<body>
+  <h1>Show do Mihão</h1>
+  <div id="question-container">
+    <h2 id="question-text">Loading question...</h2>
+    <p id="question-value"></p>
+    <form id="answer-form">
+      <div>
+        <input type="radio" id="option-1" name="answer" value="1">
+        <label for="option-1">1</label>
+      </div>
+      <div>
+        <input type="radio" id="option-2" name="answer" value="2">
+        <label for="option-2">2</label>
+      </div>
+      <div>
+        <input type="radio" id="option-3" name="answer" value="3">
+        <label for="option-3">3</label>
+      </div>
+      <div>
+        <input type="radio" id="option-4" name="answer" value="4">
+        <label for="option-4">4</label>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+  <p id="message"></p>
+</body>
+</html>
