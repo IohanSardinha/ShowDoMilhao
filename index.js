@@ -7,8 +7,6 @@ const playerID = localStorage.getItem("playerID");
 
 async function main() {  
 
-  console.log(process.env)
-
     if(playerID){
       
       const {data, err} =  await sp.from("players").select("*").eq("id", playerID).single();
