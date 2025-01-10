@@ -15,6 +15,15 @@ function displayMessage(content, isSuccess = true) {
 addQuestionForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
+  const {data:prevQuest, error:prevErr} = await sp.from("questions").select("answer").order('id', { ascending: false }).limit(1).single();
+
+  console.log(prevQuest)
+
+  if(prevQuest && prevQuest.answer == -1){
+    alert("Não foi adicionada uma resposta a ultima pergunta ainda!");
+    return;
+  }
+
   const questionName = document.getElementById('question-name').value;
   const questionValue = parseInt(document.getElementById('question-value').value, 10);
 
