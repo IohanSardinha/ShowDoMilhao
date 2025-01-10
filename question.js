@@ -19,7 +19,9 @@ function setWaitingMode(isWaiting) {
     } else {
         body.classList.remove('waiting');
         message.textContent = "";
-        document.querySelector('input[name="answer"]:checked').checked = false;
+        try{
+            document.querySelector('input[name="answer"]:checked').checked = false;
+        }catch(ex){}
     }
 }
 

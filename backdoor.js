@@ -70,3 +70,8 @@ restartGame.addEventListener('click', async (e)=>{
     await sp.from("questions").delete().neq("id", -1);
   }
 });
+
+document.getElementById("results").addEventListener('click', (e)=>{
+  e.preventDefault();
+  window.location.replace("/results.html")
+});

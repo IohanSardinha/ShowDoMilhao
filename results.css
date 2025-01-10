@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#table-container {
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+table .player-header {
+  text-align: left;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #1a73e8;
+  color: white;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #f4f4f9;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+#message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
