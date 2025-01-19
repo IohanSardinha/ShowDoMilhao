@@ -82,5 +82,5 @@ restartGame.addEventListener('click', async (e)=>{
 
 document.getElementById("results").addEventListener('click', (e)=>{
   e.preventDefault();
-  window.location.replace("/results.html")
+  window.location.replace("./results.html")
 });

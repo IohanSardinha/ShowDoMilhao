@@ -18,7 +18,7 @@ async function fetchAnswers() {
     .order('question_id', { ascending: true });
 
   if (error) {
-    displayMessage(`Error fetching answers: ${error.message}`, false);
+    displayMessage(`Um erro ocorreu ao recolher as perguntas: ${error.message}`, false);
     return [];
   }
 
@@ -30,7 +30,7 @@ async function populateTable() {
   const answers = await fetchAnswers();
 
   if (!answers.length) {
-    displayMessage('No answers available to display.', false);
+    displayMessage('Não há respostas para mostrar.', false);
     return;
   }
 
@@ -61,7 +61,7 @@ async function populateTable() {
 
   // Populate rows grouped by player
   let html = '';
-  let highestEarner = { name: '', total: 0 };
+  let highestEarner = { name: '', total: -1 };
 
   Object.keys(playersData).forEach((player) => {
     const { rows, total } = playersData[player];
@@ -72,6 +72,9 @@ async function populateTable() {
     if (total > highestEarner.total) {
       highestEarner = { name: player, total };
     }
+    else if(total == highestEarner.total){
+      highestEarner.name = `${highestEarner.name}, ${player}`
+    }
   });
 
   tableBody.innerHTML = html;
@@ -79,13 +82,13 @@ async function populateTable() {
   // Add footer with the highest earner
   tableFooter.innerHTML = `
     <tr>
-      <td colspan="5">Highest Earner</td>
+      <td colspan="5">Ganhador</td>
       <td>${highestEarner.name}</td>
       <td>R$ ${highestEarner.total}</td>
     </tr>
   `;
 
-  displayMessage('Table populated successfully.');
+  displayMessage('Tabela populada com sucesso.');
 }
 
 // Initialize table on load
