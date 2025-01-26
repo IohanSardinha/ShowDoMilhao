@@ -8,7 +8,7 @@ const playerId = localStorage.getItem('playerID');
 let question_id = -1;
 
 if (!playerId) {
-    window.location.replace("/");
+    window.location.replace("./index.html");
 }
 
 function setWaitingMode(isWaiting) {
@@ -67,6 +67,10 @@ async function waitNewQuestion(){
 
 async function main() {
 
+   const {datap, errp} =  await sp.from("players").select("*").eq("id", playerID).single();
+      
+   if(!datap)
+          window.location.replace("./index.html");
     
     const { data, error } = await getLatestQuestion();
 
