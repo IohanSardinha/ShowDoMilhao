@@ -66,6 +66,12 @@ async function waitNewQuestion(){
 }
 
 async function main() {
+   const {datap, errp} =  await sp.from("players").select("*").eq("id", playerID).single();
+      
+   if(!datap)
+          window.location.replace("./index.html");
+
+    
     const { data, error } = await getLatestQuestion();
 
     if (error) {
